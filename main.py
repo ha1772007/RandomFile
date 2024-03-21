@@ -7,13 +7,13 @@ output_directory = "download"
 if not os.path.exists(output_directory):
     os.makedirs(output_directory)
 
-# Generate 100 files
+# Generate 100 files with specified content
 for i in range(1, 101):
     # Create the file path
     file_path = os.path.join(output_directory, f"{i}.txt")
 
     # Generate content (1MB per file)
-    content = "A" * (1024 * 1024) if i % 2 == 1 else "AB" * (1024 * 1024 // 2)
+    content = str(i) * (1024 * 1024)
 
     # Write the content to the file
     with open(file_path, "w") as file:
